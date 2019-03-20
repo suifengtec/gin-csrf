@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{.title}}</title>
+</head>
+<body>
+<h1>gin CSRF demo</h1>
+<h2>method=POST</h2>
+<form action="/dashboard" method="post" accept-charset="utf-8">
+    <input type="text" name="uname">
+
+    <input type="password" name="password">
+    <input type="hidden" name="csrf_token" value="{{ .token }}">
+    <input type="submit">
+</form>
+<h2>method=GET</h2>
+<form action="/dashboard" method="get" accept-charset="utf-8">
+    <input type="text" name="uname">
+
+    <input type="password" name="password">
+    <input type="hidden" name="csrf_token" value="{{ .token }}">
+    <input type="submit">
+</form>
+
+</body>
+</html>
